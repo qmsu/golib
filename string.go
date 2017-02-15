@@ -1,5 +1,9 @@
 package golib
 
+/**
+ * 字符串处理
+ */
+
 //字符串反转，支持中文
 func Reverse(s string) string {
 	runes := []rune(s)
