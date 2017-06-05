@@ -26,7 +26,7 @@ func RandNum(n int, seed int64) int {
 
 // 返回一个[min,max]之间的随机数
 func RandNumMinMax(min int, max int) int {
-	if min == max {
+	if min >= max {
 		return max
 	}
 	return rand.Intn(max-min) + min
