@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 	"time"
+	"reflect"
 )
 
 func TestInt64ToTime(t *testing.T) {
@@ -28,4 +29,16 @@ func TestLastNWeekTime(t *testing.T) {
 	if ok {
 		fmt.Printf("start is:%v;\nend is:%v", start, end)
 	}
+}
+
+func TestDate(t *testing.T) {
+	s := Date("y-m-d h:i:s", time.Now().Unix())
+	t.Error(s)
+}
+
+func TestStrtotime(t *testing.T)  {
+	s := "2018-05-15 11:29:00"
+	parseTime := Strtotime(s)
+	t.Error("parseTime is:",parseTime)
+	t.Error("type is:",reflect.TypeOf(parseTime))
 }
